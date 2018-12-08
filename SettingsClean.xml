@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<sqldoc_automation>
+    <sourceDatabaseServer>dbservername</sourceDatabaseServer>
+    <sourceDatabaseName>dbname</sourceDatabaseName>
+    <sourceDatabaseUser>sqlaccountname</sourceDatabaseUser>
+    <sourceDatabaseInstance>dbserverinstancename</sourceDatabaseInstance>
+    <sourceDatabaseCredentialsFile>credentials-dbserver.txt</sourceDatabaseCredentialsFile>
+
+    <sqldocProjectDir>C:\path-to-sqldoc-project-file\</sqldocProjectDir>
+    <sqldocProjectFile>DBServer_Documentation.sqldoc</sqldocProjectFile>
+
+    <sqldocOutputDir>C:\datadictionaries\</sqldocOutputDir>
+    <sqldocOutputFile>DBServer_documentation.docx</sqldocOutputFile>
+    <sqldocOutputType>DOCX</sqldocOutputType>
+
+    <destinationPath>X:\Data Dictionary\</destinationPath>
+    <destinationFile>DBServer_data_dictionary_</destinationFile>
+    <destinationNeedsMapping>Y</destinationNeedsMapping>
+    <destinationDriveLetter>X:</destinationDriveLetter>
+    <destinationShareName>\\OUTPUTSERVER\d$</destinationShareName>
+    <destinationUsername>ADSDOMAIN\ADSUser</destinationUsername>	
+    <destinationCredentialsFile>credentials-outputserver.txt</destinationCredentialsFile>
+</sqldoc_automation>
+<!-- Memo to Operator - database passwords are in the $MyDir directory in credentials-xyz.txt -->
+<!--   see https://blogs.technet.microsoft.com/robcost/2008/05/01/powershell-tip-storing-and-using-password-credentials/ -->
+<!-- another memo - sqldocOutputFile - note this is volatile, (1) is either pdf or docx, (2) this is the name that *sqldoc* gives to the file, we need to pre-delete, post-rename, and post-move this file -->	
+<!-- another memo - sqldocOutputType - note this is a redgate parameter: switch to either {PDF or DOCX} upper case  -->
+<!-- another memo - destinationFile  - note this is the prefix for what you want to name the file.  Note that a datetime stamp and file extension will programmatically added to the end of the file name -->
+<!-- another memo - destinationDriveLetter - note, this needs a colon.  For example:  P:  -->
